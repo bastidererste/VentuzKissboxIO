@@ -1,7 +1,7 @@
 VentuzKissboxIO
 ===============
 
-Hardware like Kissbox I/O8 and I/O3 can add a crazy amount of inputs to your Ventuz scene. 
+Hardware like Kissbox I/O8 and I/O3 can add a crazy amount of inputs to your Ventuz scene. on an input change the box fires an UDP message <comand><slot><relay><state>. This Script generates 8 boolean arrays that hold 8 relay states each.  
 
 #### Create the following inputs & outputs:
 
@@ -16,26 +16,21 @@ Hardware like Kissbox I/O8 and I/O3 can add a crazy amount of inputs to your Ven
 | type          | name          |
 | ------------- |-------------|
 | boolean array | Slot1 |
-| boolean array | Slot1 |
-| boolean array | Slot1 |
-| boolean array | Slot1 |
-| boolean array | Slot1 |
-| boolean array | Slot1 || boolean array | Slot1 |
+| boolean array | Slot2 |
+| boolean array | Slot3 |
+| boolean array | Slot4 |
+| boolean array | Slot5 |
+| boolean array | Slot6 |
+| boolean array | Slot7 |
+| boolean array | Slot8 |
 
-#### connect a string array to the script node:
+####As Ventuz4 has no UDP in node you have to use f.e. eltimas serial to ethernet connector to connect the UDP ip:port to a comport. connect the response of the comport node to the response of this script node. Also, connect one array indexer node to each of the boolean arrays in the output.
 
-
-![alt text](Http://sebastianspiegl.de/VentuzLoadSaveXML_connection.png "VentuzLoadSaveXML_connection.png")
 
 #### troubleshooting:
 
 |Error    | Solution |
 |---------|-----|
-|Check method Onload in Script Node Script... File "filename" could not be found |Either create your initial XML file manually OR invoke **_save_** first to create it from inside Ventuz.|
-|Check method Onsave in Script Node Script... Access to path "filename" is denied|You haven't got the privilege to write to the path you provided. Use "C:\Users\ **_accountName_** \..." instead. |
-
-
-
 
 
 
