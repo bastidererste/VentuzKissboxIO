@@ -10,7 +10,6 @@ public class Script : ScriptBase, System.IDisposable
 	// whether the Generate() method should return true or false
 	// during its next execution.
 	private bool changed;
-
 	bool[][] States = new bool[8][];
 	public Encoding enc;
 	public struct Message{
@@ -28,7 +27,7 @@ public class Script : ScriptBase, System.IDisposable
 					};
 		}	
 	}
-    // This Method is called if the component is loaded/created.
+        // This Method is called if the component is loaded/created.
 	public Script()
 	{
 	//	bool[] States[0] = Enumerable.Repeat(false, 8).ToArray();
@@ -41,12 +40,13 @@ public class Script : ScriptBase, System.IDisposable
 	 enc = Encoding.GetEncoding("ISO-8859-1");
 	}
     
-    // This Method is called if the component is unloaded/disposed
-    public virtual void Dispose()
-    {
-    }
+        // This Method is called if the component is unloaded/disposed
+        public virtual void Dispose()
+        {
+        	
+        }
     
-    // This Method is called if an input property has changed its value
+        // This Method is called if an input property has changed its value
 	public override void Validate()
 	{
 		// Remember: set changed to true if any of the output 
@@ -78,18 +78,18 @@ public class Script : ScriptBase, System.IDisposable
 	}
 
     
-    // This Method is called every time before a frame is rendered.
-    // Return value: if true, Ventuz will notify all nodes bound to this
-    //               script node that one of the script's outputs has a
-    //               new value and they therefore need to validate. For
-    //               performance reasons, only return true if output
-    //               values really have been changed.
-    public override bool Generate()
-    {
-        if (changed)
+        // This Method is called every time before a frame is rendered.
+        // Return value: if true, Ventuz will notify all nodes bound to this
+        //               script node that one of the script's outputs has a
+        //               new value and they therefore need to validate. For
+        //               performance reasons, only return true if output
+        //               values really have been changed.
+        public override bool Generate()
         {
-            changed = false;
-            return true;
+                if (changed)
+                {
+                        changed = false;
+                        return true;
         }
 
         return false;
