@@ -1,7 +1,7 @@
 VentuzKissboxIO
 ===============
 
-Hardware like Kissbox I/O8 and I/O3 can add a crazy amount of inputs to your Ventuz scene. on an input change the box fires an UDP message <comand><slot><relay><state>. This Script generates 8 boolean arrays that hold 8 relay states each.  
+Hardware like Kissbox I/O8 and I/O3 can add a crazy amount of inputs to your Ventuz scene. on an input change the box fires an UDP message that has the following protocol: comand-slot-input-state. This Script generates 8 boolean arrays that hold 8 input states each.  
 
 #### Create the following inputs & outputs:
 
